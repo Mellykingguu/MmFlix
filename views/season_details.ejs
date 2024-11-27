@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MmFlix - <%= series.title %> - Season <%= season.season_number %></title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/Home/favicon-32x32.png">
+    <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fontawesome-free-6.4.2-web/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <style> 
+      header{
+        background: url('/series/<%= season.season_bg_poster %>')no-repeat center center/cover;
+      } 
+      header .content {
+        margin: 120px auto 100px auto;
+      }
+      .movie_bx_1 .card a img{
+        width: 180px;
+        height: 240px;
+      }
+        .movie_bx_1 .card a .content{
+            width: 180px;
+            height: 80px;
+        }
+        .movie_bx_1 .card {
+            min-width: 180px;
+            height: 240px;     
+        }
+        .movie-grid{
+            margin-top: -80px;
+        }
+    @media(max-width: 600px){
+      header .content {
+        margin: 50px auto 40px auto;
+      }
+    }
+  </style>
+
+    
+  <header>
+    <nav>
+      <h1 class="gradient-text">MmFlix</h1>
+      <div class="end_bx">               
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/movies">Movies</a></li>
+          <li><a href="/shows" class="active">Shows</a></li>
+          <li><a href="/categories">Categories</a></li>                    
+        </ul>
+        <form action="/search" method="GET" class="search">
+          <input type="text" name="q" placeholder="Search movies & shows..." />
+          <button type="submit"><i class="fa-solid fa-magnifying-glass" id="search_icon"></i></button>
+        </form>
+        <div class="hamburger">
+          <div class="hamburger-icon"></div>
+          <div class="hamburger-icon"></div>
+          <div class="hamburger-icon"></div>
+        </div>
+      </div>   
+    </nav>
+
+
+
+    <div class="content">
+      <h6>Duration: <span id="header_dur"><%= series.duration %></span></h6>
+      <h3 id="header_gen"><i class="fa-solid fa-star"></i><%= season.season_rate.toFixed(1) %><span> <%= series.genre %></span></h3>
+      <h1 id="header_title"><%= series.title %> <span class="s2">S<%= season.season_number %></span></h1>
+      <p id="header_pra"><%= season.season_description %></p>
+      <h3 id="header_gen"><span class="s2">Release Date: </span><span><%= season.season_date %>, <%= season.season_year %></span></h6>
+      <h3 id="header_gen"><span class="s2">Creator: </span><span><%= series.director %><%= series.creator %></span></h6>
+      <h3 id="header_gen"><span class="s2">Cast: </span><span><%= series.cast %></span></h6>
+    </div>
+  </header>
+
+
+
+  <div class="movie-grid" style="z-index: 1000; height: 330px;">
+    <button class="scroll-arrow scroll-left">&laquo;</button>
+    <button class="scroll-arrow scroll-right">&raquo;</button>
+    <!--movies box strat-->
+    <div class="movie_bx_1 grid sg" id="mvoes_bx_1" style="overflow-y: hidden; height: 300px;">
+      <% episodes.forEach(episode => { %>
+      <div class="card" style="padding-top: 0; margin-top: -50px;">
+        <div class="image-card">
+          <a href="/shows/<%= series.url %>/season_<%= season.season_number %>/episode_<%= episode.episode_number %>"><img src="/series/<%= season.season_poster %>"></a>
+        </div>
+        <div class="series-text">
+          <h3>Episode <%= episode.episode_number %></h3>
+        </div> 
+      </div>
+      <% }); %>
+    </div>        
+  </div>
+
+
+
+
+  <section>
+    <h2 class="s1">Trailer</h2>
+    <div id="trailer-section">
+      <iframe width="560" height="315" src="https://youtube.com/embed/<%= season.season_trailer %>" allow="autoplay; encrypted-media" frameborder="0"></iframe>
+    </div>
+  </section>
+
+
+    
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h1 class="gradient-text">MmFlix</h1>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 MmFlix. All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/script.js"></script>
+<script src="/movies.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MmFlix - Shows</title> 
+    <link rel="icon" type="image/png" sizes="32x32" href="/Home/favicon-32x32.png">
+    <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fontawesome-free-6.4.2-web/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="movies.css">
+</head>
+<body>   
+    <header> 
+        <nav>
+            <h1 class="gradient-text">MmFlix</h1>
+            <div class="end_bx">               
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/movies">Movies</a></li>
+                    <li><a href="/shows" class="active">Shows</a></li>
+                    <li><a href="/categories">Categories</a></li>
+                    
+                </ul>
+                <form action="/search" method="GET" class="search">
+                    <input type="text" name="q" placeholder="Search movies & shows..." />
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass" id="search_icon"></i></button>
+                </form>
+                <div class="hamburger">
+                    <div class="hamburger-icon"></div>
+                    <div class="hamburger-icon"></div>
+                    <div class="hamburger-icon"></div>
+                </div>
+            </div>   
+        </nav>
+
+
+        <div class="content">
+            <h1 id="header_title">All Shows</h1> 
+        </div>
+    </header>
+
+
+    <button id="backToTopBtn" class="back-to-top-btn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+ 
+
+    <!--movies box strat-->
+    <div class="movie_boxes" id="mvoes_bx_1">
+        <div class="alll">
+            <% series.forEach(serie => { %>
+            <div class="card">
+                <a href="/shows/<%= serie.url %>">
+                    <img src="/series/<%= serie.poster %>">
+                    <div class="content">
+                      <h5><%= serie.title %></h5>
+                      <h6>
+                        <span><%= serie.year %></span>
+                        <div class="rate">
+                          <i class="fa-solid fa-heart"></i>
+                          <i class="fa-solid fa-eye"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <h6><%= serie.rate.toFixed(1) %></h6>
+                        </div>
+                      </h6>
+                    </div>
+                </a>
+            </div>
+            <% }) %>  
+        </div>        
+        <!-- Add more page containers as needed -->
+    </div> 
+
+
+    <section>
+        <div class="pagination">
+          <% if (currentPage > 1) { %>
+            <a href="/shows?page=<%= currentPage - 1 %>">&laquo; Previous</a>
+          <% } %>
+      
+          <% 
+          const maxPagesToShow = 6;
+          const startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
+          const endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
+      
+          if (startPage > 1) { %>
+            <% if (startPage > 2) { %>
+                <a href="/shows?page=1">1<span class="ellipsis">...</span></a>
+              <% } else { %>
+                <a href="/shows?page=1">1</a>
+              <% } %>
+          <% } %>
+      
+          <% for (let i = startPage; i <= endPage; i++) { %>
+            <a href="/shows?page=<%= i %>" class="<%= i === currentPage ? 'active' : '' %>"><%= i %></a>
+          <% } %>
+      
+          <% if (endPage < totalPages) { %>
+            <% if (endPage < totalPages - 1) { %>
+              <a href="/shows?page=<%= totalPages %>"><span class="ellipsis">...</span><%= totalPages %></a>
+            <% } %>
+            
+          <% } %>
+      
+          <% if (currentPage < totalPages) { %>
+            <a href="/shows?page=<%= currentPage + 1 %>">Next &raquo;</a>
+          <% } %>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h1 class="gradient-text">MmFlix</h1>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MmFlix. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+    <script src=/Movies.js></script>
+</body>
+</html>

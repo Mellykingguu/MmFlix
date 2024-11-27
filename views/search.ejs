@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MmFlix - Movies</title> 
+  <link rel="icon" type="image/png" sizes="32x32" href="/Home/favicon-32x32.png">
+  <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/fontawesome-free-6.4.2-web/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="movies.css">
+</head>
+<body>   
+  <header> 
+    <nav>
+      <h1 class="gradient-text">MmFlix</h1>
+      <div class="end_bx">               
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/movies">Movies</a></li>
+          <li><a href="/shows">Shows</a></li>
+          <li><a href="/categories">Categories</a></li>
+        </ul>
+        <form action="/search" method="GET" class="search">
+          <input type="text" name="q" placeholder="Search movies & shows..." />
+          <button type="submit"><i class="fa-solid fa-magnifying-glass" id="search_icon"></i></button>
+        </form>
+        <div class="hamburger">
+          <div class="hamburger-icon"></div>
+          <div class="hamburger-icon"></div>
+          <div class="hamburger-icon"></div>
+        </div>
+      </div>   
+    </nav>
+
+
+    <div class="content">
+      <h1 id="header_title">Search Results</h1>
+      <p id="header_pra" style="text-align: center; width: 100%">"<%= query %>"</p> 
+    </div>
+  </header>
+
+
+  <button id="backToTopBtn" class="back-to-top-btn">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <div class="search-results">
+    <% if (results.length > 0) { %>
+      <% results.forEach(item => { %>
+        <% if (item.type === 'movie') { %> 
+          <a href="/movies/<%= item.url %>" class="search-card">
+            <img src="/movie/<%= item.image %>">
+            <div class="des3">
+              <h3><%= item.title %></h3>
+              <div class="des2">
+                <p>Duration: <%= item.duration %></p>
+                <p><i class="fa-solid fa-star"></i> <%= item.rate.toFixed(1) %> <%= item.genre %></p>
+              </div>
+              <p class="des"><%= item.description %></p>            
+            </div>        
+          </a>
+        <% } else { %>
+          <a href="/shows/<%= item.url %>" class="search-card">
+            <img src="/series/<%= item.poster %>">
+            <div class="des3">
+              <h3><%= item.title %></h3>
+              <div class="des2">
+                <p>Duration: <%= item.duration %></p>
+                <p><i class="fa-solid fa-star"></i> <%= item.rate.toFixed(1) %> <%= item.genre %></p>
+              </div>
+              <p class="des"><%= item.description %></p>
+            </div>
+          </a>
+        <% } %>
+      <% }) %>
+    <% } else { %>
+      <p>No Results found.</p>
+    <% } %>
+  </div>
+
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h1 class="gradient-text">MmFlix</h1>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 MmFlix. All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src=/Movies.js></script>
+</body>
+</html>

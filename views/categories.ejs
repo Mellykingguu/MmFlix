@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MmFlix - Categories</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/Home/favicon-32x32.png">
+    <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fontawesome-free-6.4.2-web/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="movies.css">
+  </head> 
+<body>
+  <header>
+    <nav>
+      <h1 class="gradient-text">MmFlix</h1>
+      <div class="end_bx">               
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/movies">Movies</a></li>
+          <li><a href="/shows">Shows</a></li>
+          <li><a href="/categories"   class="active">Categories</a></li>                    
+        </ul>
+        <form action="/search" method="GET" class="search">
+          <input type="text" name="q" placeholder="Search movies & shows..." />
+          <button type="submit"><i class="fa-solid fa-magnifying-glass" id="search_icon"></i></button>
+        </form>
+        <div class="hamburger">
+          <div class="hamburger-icon"></div>
+          <div class="hamburger-icon"></div>
+          <div class="hamburger-icon"></div>
+        </div>
+      </div>   
+    </nav>
+
+
+    <div class="content">
+      <h1 id="header_title">All Categories...</h1> 
+    </div>
+  </header>
+
+
+  <button id="backToTopBtn" class="back-to-top-btn">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+
+  <% categories.forEach(category => { %>
+  <h4 class="s1 m1"><%= category.name %> <a href="/categories/<%= category.slug %>"><button class="scroll-arrow scroll">&raquo;</button></a></h2>
+  <div class="movie_bx_1 movie_bx_2 category" id="mvoes_bx_1"> 
+    <div class="box2_actives grid" id="col_action">
+      <% const categoryContent = content.filter(item => item.category_name === category.name).slice(0, 5); %>
+      <% categoryContent.forEach(item => { %>
+      <% if (item.type === 'movie') { %>
+        <div class="card">
+          <a href="/movies/<%= item.url %>">
+              <img src="/movie/<%= item.image %>">
+              <div class="content">
+                <h5><%= item.title %></h5>
+                <h6>
+                  <span><%= item.release_year %></span>
+                  <div class="rate">
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-eye"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <h6><%= item.rate.toFixed(1) %></h6>
+                  </div>
+                </h6>
+              </div>
+          </a>
+        </div>      
+      <% } else { %> 
+        <div class="card">
+          <a href="/shows/<%= item.url %>">
+              <img src="/series/<%= item.poster %>">
+              <div class="content">
+                <h5><%= item.title %></h5>
+                <h6>
+                  <span><%= item.year %></span>
+                  <div class="rate">
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-eye"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <h6><%= item.rate.toFixed(1) %></h6>
+                  </div>
+                </h6>
+              </div>
+          </a>
+        </div>
+      <% } %>
+      <% }) %>
+    </div>
+  </div>
+  <% }) %> 
+
+
+<div class="bubble-container">
+  <span class="bub a"></span>
+  <span class="bub b"></span>
+  <span class="bub c"></span>
+  <span class="bub d"></span>
+  <span class="bub e"></span>
+  <span class="bub f"></span>
+  <span class="bub g"></span>
+  <span class="bub h"></span>
+  <span class="bub i"></span>
+  <span class="bub j"></span>
+  <span class="bub k"></span>
+  <span class="bub l"></span>
+  <span class="bub m"></span>
+</div>
+
+
+<button id="backToTopBtn" class="back-to-top-btn">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h1 class="gradient-text">MmFlix</h1>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 MmFlix. All rights reserved</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+<script src="/movies.js"></script>
+</body>
+</html>

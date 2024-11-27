@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MmFlix - Home</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/Home/favicon-32x32.png">
+    <link rel="stylesheet" href="/fontawesome-free-6.4.2-web/css/all.min.css">
+    <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    
+</head> 
+<body>
+    <style>
+        header .content {
+            margin: 120px auto 10px auto;
+        }
+        @media(max-width: 600px){
+            header .content {
+                margin: 50px auto 0px auto;
+            }
+        }
+    </style>
+    
+    <header> 
+        <nav>
+            <h1 class="gradient-text">MmFlix</h1>
+            <div class="end_bx">               
+                <ul>
+                    <li><a href="/"  class="active">Home</a></li>
+                    <li><a href="/movies">Movies</a></li>
+                    <li><a href="/shows">Shows</a></li>
+                    <li><a href="/categories">Categories</a></li>
+                    
+                </ul> 
+                <form action="/search" method="GET" class="search">
+                    <input type="text" name="q" placeholder="Search movies & shows..." />
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass" id="search_icon"></i></button>
+                </form>
+                <div class="hamburger">
+                    <div class="hamburger-icon"></div>
+                    <div class="hamburger-icon"></div>
+                    <div class="hamburger-icon"></div>
+                </div>
+            </div>   
+        </nav>
+
+
+        <div class="content">
+            <h6>Duration: <span id="header_dur2">2h 46m</span></h6>
+            <h3 id="header_gen2"><i class="fa-solid fa-star"></i>8.6<span> Action / Adventure / Drama</span></h3>
+            <h1 id="header_title2">Dune: Part Two</h1>
+            <p id="header_pra2">Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the universe, he must prevent a terrible future only he can foresee.</p>
+            <div class="btns" id="header_btns">
+                <a href="" class="d-btn"><i class="fa-solid fa-download"></i> Download</a>
+                <a href="" class="w-btn"><i class="fa-solid fa-play"></i> Play</a>               
+            </div>
+        </div> 
+
+
+        <div class="slider_btns">
+            <h6 class="slider"></h6>
+            <h6 class="slider"></h6>
+            <h6 class="slider"></h6>
+            <h6 class="slider"></h6>
+            <h6 class="slider"></h6>
+            <h6 class="slider"></h6>
+            <h6 class="slider"></h6>
+            <h6 class="slider"></h6>
+            <h6 class="slider"></h6>
+        </div>
+    </header>
+
+
+
+    <!--trending box-->
+    <div class="tranding_bx">
+        <li><a href="#" class="active"><i class="fa-solid fa-angles-up"></i> Trends Now <span></span></a></li>
+        <li><a href="#"><i class="fa-solid fa-fire"></i> Popular<span></span></a></li>
+        <li><a href="#"><i class="fa-solid fa-star"></i> Trends Now <span></span></a></li>
+        <li><a href="#"><i class="fa-solid fa-plus"></i>Recently Added <span></span></a></li>
+    </div>
+
+
+
+    <!--welcome box-->
+    <div class="welcome">
+        <div class="wlcm-text">
+            <h1 class="wlcm">Welcome to, <small class="gradient-text">MmFlix</small></h1>
+            <p>Find and download your favorite Movies & TV shows in high quality!</p>
+        </div> 
+    </div>
+
+
+    <button id="backToTopBtn" class="back-to-top-btn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+
+    <!--bubble container-->
+    <div class="bubble-container">
+        <span class="bub a"></span>
+        <span class="bub b"></span>
+        <span class="bub c"></span>
+        <span class="bub d"></span>
+        <span class="bub e"></span>
+        <span class="bub f"></span>
+        <span class="bub g"></span>
+        <span class="bub h"></span>
+        <span class="bub i"></span>
+        <span class="bub j"></span> 
+        <span class="bub k"></span>
+        <span class="bub l"></span>
+        <span class="bub m"></span>
+    </div>
+
+
+    <div class="movie-grid">
+        <button class="scroll-arrow scroll-left">&laquo;</button>
+        <button class="scroll-arrow scroll-right">&raquo;</button>
+        <div class="cato_bx grid main" id="cato_bx">
+            <button id="action1">Action</button>
+            <button id="crime1">Crime</button>
+            <button id="adventure1">Adventure</button>
+            <button id="biography1">Biography</button>
+            <button id="fantasy1">Fantasy</button>
+            <button id="animation1">Animation</button>
+            <button id="comedy1">Comedy</button>
+            <button id="romance1">Romance</button>
+            <button id="music1">Music</button>
+            <button id="reality1">Reality</button>
+            <button id="documentary1">Documentary</button>
+            <button id="family1">Family</button>
+            <button id="drama1">Drama</button>
+            <button id="teen1">18+</button>
+            <button id="sci-fi1">SciFi</button>
+            <button id="anime1">Anime</button>
+            <button id="thriller1">Thriller</button>
+            <button id="webseries1">Webseries</button>
+            <button id="horror1">Horror</button>
+            <button id="musical1">Musical</button>   
+        </div>
+    </div>     
+
+    <section>  
+        <h2 class="s1">Latest Movies</h2>
+        <div class="movie-grid">
+            <button class="scroll-arrow scroll-left">&laquo;</button>
+            <button class="scroll-arrow scroll-right">&raquo;</button>
+            <!--movies box strat-->
+            <div class="movie_bx_1 grid" id="mvoes_bx_1">
+                <div class="movie_bxx movie_box_active" id="action_bx"></div>
+                <div class="movie_bxx" id="crime_bx"></div>
+                <div class="movie_bxx" id="adventure_bx"></div>
+                <div class="movie_bxx" id="biography_bx"></div>
+                <div class="movie_bxx" id="fantasy_bx"></div>
+                <div class="movie_bxx" id="animation_bx"></div>
+                <div class="movie_bxx" id="comedy_bx"></div>
+                <div class="movie_bxx" id="reality_bx"></div>
+                <div class="movie_bxx" id="romance_bx"></div>
+                <div class="movie_bxx" id="music_bx"></div>
+                <div class="movie_bxx" id="documentary_bx"></div>
+                <div class="movie_bxx" id="family_bx"></div>
+                <div class="movie_bxx" id="drama_bx"></div>
+                <div class="movie_bxx" id="teen_bx"></div>
+                <div class="movie_bxx" id="sci-fi_bx"></div>
+                <div class="movie_bxx" id="anime_bx"></div>
+                <div class="movie_bxx" id="thriller_bx"></div>
+                <div class="movie_bxx" id="webseries_bx"></div>
+                <div class="movie_bxx" id="horror_bx"></div>
+                <div class="movie_bxx" id="musical_bx"></div>       
+            </div>
+        </div>
+    </section>  
+
+
+    <div class="tranding_bx" style="margin-top: 20px;">
+        <li><a href="#" class="active"><i class="fa-solid fa-photo-film"></i> Movies <span></span></a></li>
+        <li><a href="#"><i class="fa-solid fa-film"></i> series<span></span></a></li>
+        <li><a href="#">Trailer <span></span></a></li>
+    </div>
+       
+     
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h1 class="gradient-text">MmFlix</h1>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MmFlix. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="/script.js"></script>
+    <script src="/Movies.js"></script>
+    <script> 
+        //FUNCTIONAL 
+        let header_dur = document.getElementById('header_dur2');
+        let header_gen = document.getElementById('header_gen2');
+        let header_title = document.getElementById('header_title2');
+        let header_pra = document.getElementById('header_pra2');
+        let header = document.getElementsByTagName('header')[0];
+        let slider_btn = document.getElementsByClassName('slider');
+
+        const slider_load = () => {
+            setTimeout(() => {
+                header.style.background = "url('/Home/Dune_Part TwoCover.jpg')no-repeat center center/cover";
+                header_dur.innerHTML = "2h 46m";
+                header_gen.innerHTML = `<i class="fa-solid fa-star"></i>8.6<span> Action / Adventure / Drama</span>`
+                header_title.innerHTML = "Dune: Part Two";
+                header_pra.innerHTML = "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the universe, he must prevent a terrible future only he can foresee."; 
+                header_btns.innerHTML = `
+                    <a href="/movies/Dune_Part_Two" class="d-btn"><i class="fa-solid fa-download"></i> Download</a>
+                    <a href="/movies/Dune_Part_Two" class="w-btn"><i class="fa-solid fa-play"></i> Play</a>
+                    `               
+                slider_btn[0].style.background =  "blueviolet";
+                slider_btn[1].style.background =  "rgb(138, 43, 226, .3)";
+                slider_btn[8].style.background =  "rgb(138, 43, 226, .3)";              
+            }, 0);
+            setTimeout(() => {
+                header.style.background = "url('/Home/Inside Out 2Cover.jpg')no-repeat center center/cover";
+                header_dur.innerHTML = "1h 36m";
+                header_gen.innerHTML = `<i class="fa-solid fa-star"></i>8.0<span> Animation / Adventure / Comedy</span>`
+                header_title.innerHTML = "Inside Out 2";
+                header_pra.innerHTML = "Joy, Sadness, Anger, Fear and Disgust have been running a successful operation by all accounts. However, when Anxiety shows up, they aren't sure how to feel.";
+                header_btns.innerHTML = `
+                    <a href="/movies/Inside_Out_2" class="d-btn"><i class="fa-solid fa-download"></i> Download</a>
+                    <a href="/movies/Inside_Out_2" class="w-btn"><i class="fa-solid fa-play"></i> Play</a>
+                    ` 
+                slider_btn[0].style.background =  "rgb(138, 43, 226, .3)";
+                slider_btn[1].style.background =  "blueviolet";               
+            }, 5000);
+            setTimeout(() => {
+                header.style.background = "url('/Home/KKWTK.jpg')no-repeat center center/cover"; 
+                header_dur.innerHTML = "50m";
+                header_gen.innerHTML = `<i class="fa-solid fa-star"></i>4.5<span> Reality-Tv</span>`
+                header_title.innerHTML = "The Kardashians";
+                header_pra.innerHTML = "Kris, Kourtney, Kim, Khloé, Kendall, and Kylie tell their stories of love and life in the spotlight, from the pressures of running billion-dollar businesses to the joys of playtime and school drop-offs.";
+                header_btns.innerHTML = `
+                    <a href="/shows/The_Kardashians" class="d-btn"><i class="fa-solid fa-download"></i> Download</a>
+                    <a href="/shows/The_Kardashians" class="w-btn"><i class="fa-solid fa-play"></i> Play</a>
+                    ` 
+                slider_btn[1].style.background =  "rgb(138, 43, 226, .3)";
+                slider_btn[2].style.background =  "blueviolet";                
+                
+            }, 10000);
+            setTimeout(() => {
+                header.style.background = "url('/Home/Beetlejuice BeetlejuiceCover.jpeg')no-repeat center center/cover"; 
+                header_dur.innerHTML = "1h 44m";
+                header_gen.innerHTML = `<i class="fa-solid fa-star"></i>6.5<span> Comedy / Fantasy / Horror</span>`
+                header_title.innerHTML = "Beetlejuice Beetlejuice";
+                header_pra.innerHTML = "After a family tragedy, three generations of the Deetz family return home to Winter River. Still haunted by Beetlejuice, Lydia's life is turned upside down when her teenage daughter, Astrid, accidentally opens the portal to the Afterlife.";
+                header_btns.innerHTML = `
+                    <a href="/movies/Beetlejuice_Beetlejuice" class="d-btn"><i class="fa-solid fa-download"></i> Download</a>
+                    <a href="/movies/Beetlejuice_Beetlejuice" class="w-btn"><i class="fa-solid fa-play"></i> Play</a>
+                    ` 
+                slider_btn[4].style.background =  "rgb(138, 43, 226, .3)";
+                slider_btn[5].style.background =  "blueviolet";  
+            }, 15000);
+            setTimeout(() => {
+                header.style.background = "url('/Home/House of the Dragon S2Cover.jpg')no-repeat center center/cover";     
+                header_dur.innerHTML = "50m";
+                header_gen.innerHTML = `<i class="fa-solid fa-star"></i>8.4<span> Action / Adventure / Drama</span>`
+                header_title.innerHTML = "House of the Dragon";
+                header_pra.innerHTML = "After the death of their father, two siblings fight for the throne, thereby causing a civil war known as the Dance of the Dragons.";
+                header_btns.innerHTML = `
+                    <a href="/shows/House_of_the_Dragon" class="d-btn"><i class="fa-solid fa-download"></i> Download</a>
+                    <a href="/shows/House_of_the_Dragon" class="w-btn"><i class="fa-solid fa-play"></i> Play</a>
+                    ` 
+                slider_btn[2].style.background =  "rgb(138, 43, 226, .3)";
+                slider_btn[3].style.background =  "blueviolet";                  
+            }, 20000);
+            setTimeout(() => {
+                header.style.background = "url('/Home/bridgertonS3Cover.jpg')no-repeat center center/cover";   
+                header_dur.innerHTML = "1h";
+                header_gen.innerHTML = `<i class="fa-solid fa-star"></i>7.4<span> Drama / Romance</span>`
+                header_title.innerHTML = "Bridgerton";
+                header_pra.innerHTML = "During the Regency era in England, eight close-knit siblings of the powerful Bridgerton family attempt to find love."   
+                header_btns.innerHTML = `
+                    <a href="/shows/Bridgerton" class="d-btn"><i class="fa-solid fa-download"></i> Download</a>
+                    <a href="/shows/Bridgerton" class="w-btn"><i class="fa-solid fa-play"></i> Play</a>
+                    ` 
+                slider_btn[3].style.background =  "rgb(138, 43, 226, .3)";
+                slider_btn[4].style.background =  "blueviolet";                
+            }, 25000);
+            setTimeout(() => {
+                header.style.background = "url('/Home/Bad Boys_Ride or DieCover.jpg')no-repeat center center/cover";   
+                header_dur.innerHTML = "1h 55m";
+                header_gen.innerHTML = `<i class="fa-solid fa-star"></i>7.0<span> Action / Adventure / Comedy</span>`
+                header_title.innerHTML = "Bad Boys: Ride or Die";
+                header_pra.innerHTML = "When their late police captain gets linked to drug cartels, wisecracking Miami cops Mike Lowrey and Marcus Burnett embark on a dangerous mission to clear his name.";
+                header_btns.innerHTML = `
+                    <a href="/movies/Bad_Boys_Ride_or_Die" class="d-btn"><i class="fa-solid fa-download"></i> Download</a>
+                    <a href="/movies/Bad_Boys_Ride_or_Die" class="w-btn"><i class="fa-solid fa-play"></i> Play</a>
+                    ` 
+                slider_btn[5].style.background =  "rgb(138, 43, 226, .3)";
+                slider_btn[6].style.background =  "blueviolet";           
+            }, 30000);
+            setTimeout(() => {
+                header.style.background = "url('/Home/ChallengersCover.jpg')no-repeat center center/cover";   
+                header_dur.innerHTML = "2h 11m";
+                header_gen.innerHTML = `<i class="fa-solid fa-star"></i>7.8<span> Drama / Romance / Sport</span>`
+                header_title.innerHTML = "Challengers";
+                header_pra.innerHTML = "Tashi, a former tennis prodigy turned coach, turned her husband into a champion. But to overcome a losing streak, he needs to face his ex-best friend and Tashi's ex-boyfriend.";
+                header_btns.innerHTML = `
+                    <a href="/movies/Challengers" class="d-btn"><i class="fa-solid fa-download"></i> Download</a>
+                    <a href="/movies/Challengers" class="w-btn"><i class="fa-solid fa-play"></i> Play</a>
+                    ` 
+                slider_btn[6].style.background =  "rgb(138, 43, 226, .3)";
+                slider_btn[7].style.background =  "blueviolet";            
+            }, 35000);
+            setTimeout(() => {
+                header.style.background = "url('/Home/Power Book II_Ghost S04Cover.jpg')no-repeat center center/cover"; 
+                header_dur.innerHTML = "1h";
+                header_gen.innerHTML = `<i class="fa-solid fa-star"></i>7.5<span> Crime / Drama</span>`
+                header_title.innerHTML = "Power Book II: Ghost";
+                header_pra.innerHTML = "Tariq St. Patrick, the teenage son of a drug lord, goes to great lengths to release his mother, who is accused of a crime he committed, from prison.";
+                header_btns.innerHTML = `
+                    <a href="/shows/Power_Book_II_Ghost" class="d-btn"><i class="fa-solid fa-download"></i> Download</a>
+                    <a href="/shows/Power_Book_II_Ghost" class="w-btn"><i class="fa-solid fa-play"></i> Play</a>
+                    ` 
+                slider_btn[7].style.background =  "rgb(138, 43, 226, .3)";
+                slider_btn[8].style.background =  "blueviolet";              
+            }, 40000);           
+        }
+        
+        setInterval(slider_load, 45000);
+        slider_load();
+    </script>
+</body>
+</html>

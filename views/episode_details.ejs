@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MmFlix - <%= series.title %> - S<%= season.season_number %>E<%= episode.episode_number %></title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/Home/favicon-32x32.png">
+    <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fontawesome-free-6.4.2-web/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">    
+</head>
+<body>  
+  <style>
+    header{
+      background: url('/series/<%= season.season_bg_poster %>')no-repeat center center/cover;
+    } 
+    header .content {
+      margin: 120px auto 100px auto;
+    }
+    @media(max-width: 600px){
+      header .content {
+        margin: 50px auto 0px auto;
+      }
+    }
+    </style>
+
+
+    <header>
+        <nav>
+            <h1 class="gradient-text">MmFlix</h1>
+            <div class="end_bx">               
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/movies">Movies</a></li>
+                    <li><a href="/shows" class="active">Shows</a></li>
+                    <li><a href="/categories">Categories</a></li>                    
+                </ul>
+                <form action="/search" method="GET" class="search">
+                  <input type="text" name="q" placeholder="Search movies & shows..." />
+                  <button type="submit"><i class="fa-solid fa-magnifying-glass" id="search_icon"></i></button>
+              </form>
+                <div class="hamburger">
+                    <div class="hamburger-icon"></div>
+                    <div class="hamburger-icon"></div>
+                    <div class="hamburger-icon"></div>
+                </div>
+            </div>   
+        </nav>
+
+
+
+    <div class="content">
+      <h6>Duration: <span id="header_dur"><%= series.duration %></span></h6>
+      <h3 id="header_gen"><i class="fa-solid fa-star"></i><%= episode.rate.toFixed(1) %><span> <%= series.genre %></span></h3>
+      <h1 id="header_title"><%= series.title %> <span class="s2">S<span style="font-size: 14px;"><%= season.season_number %></span>E<span style="font-size: 14px;"><%= episode.episode_number %></span></span></h1>
+      <p id="header_pra"><%= episode.description %></p>
+      <h3 id="header_gen"><span class="s2">Release Date: </span><span><%= episode.date %>, <%= episode.year %></span></h6>
+      <h3 id="header_gen"><span class="s2">Creator: </span><span><%= series.creator %><%= series.director %></span></h6>
+      <h3 id="header_gen"><span class="s2">Cast: </span><span><%= series.cast %></span></h6>
+      <div class="btns" id="header_btns">
+        <a href="" class="d-btn"><i class="fa-solid fa-download"></i> Download</a>
+        <a href="" class="w-btn"><i class="fa-solid fa-play"></i> Play</a>               
+    </div>
+    </div>
+  </header>
+
+
+  <section>
+    <h2 class="s1">Trailer</h2>
+    <div id="trailer-section">
+      <iframe width="560" height="315" src="https://youtube.com/embed/<%= season.season_trailer %>" allow="autoplay; encrypted-media" frameborder="0"></iframe>
+    </div>
+  </section>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h1 class="gradient-text">MmFlix</h1>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MmFlix. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="/script.js"></script>
+    <script src="/movies.js"></script>
+</body>
+</html>
