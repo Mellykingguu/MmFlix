@@ -5,6 +5,7 @@ const app = express();
 const ejs = require('ejs')
 const mysql = require('mysql2/promise'); 
 const path = require('path');
+const b2 = require('./b2Config');
 
 
 // Create a MySQL connection pool 
@@ -15,6 +16,22 @@ const pool = mysql.createPool({
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
 }); 
+
+
+app.get('/files', async (req, res) => {
+  try {
+    const { data } = await b2.listFiles({
+      bucketId: 'MmFlix', // Your bucket name
+    });
+
+    // Pass the file list to the EJS template
+    res.render('files', { files: data.files });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Internal server error');
+  }
+});
+
 
 
 app.get('/', (req, res) => {
